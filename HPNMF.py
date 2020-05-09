@@ -19,7 +19,7 @@ def HPNMF(A, S, max_iter, k, lambda, gama, alpha, beta):
         # updata U
         phi = 2.0 * (alpha + 1) * np.dot(U, np.dot(U.T, U))
         up = 2.0 * np.dot(A2, U) + lambda * np.dot(S, U)
-        down = phi + lambuda * np.dot(D, U) + gama * np.dot(U, M)
+        down = phi + lambda * np.dot(D, U) + gama * np.dot(U, M)
         U = U * (N + beta * up / np.maximum(down, eps))
 
     return U
